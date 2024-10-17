@@ -4,11 +4,11 @@
   <img src="https://raw.githubusercontent.com/pedropaulofb/resiliont/main/resources/logos/resiliont-logo-06.png" alt="Logo" style="width:500px">
 </p> -->
 
- [OnBehaVR](https://github.com/italojsoliveira/virtual-reality-ontology) is a core ontology that aims to provide a characterization of the user behaviour in a virtual reality environment by leveraging the Unified Foundational Ontology (UFO) and OntoUML modelling language. OnBehaVR intends to structure domain information so that data from different sources can be explained and, therefore, represented and integrated.
+ [OnBehaVR](https://github.com/italojsoliveira/virtual-reality-ontology) is a core ontology that aims to characterize user behaviour in a virtual reality environment by leveraging the Unified Foundational Ontology (UFO) and OntoUML modelling language. OnBehaVR intends to structure domain information so that data from different sources can be explained, represented, and integrated.
 
 ## Authors
 
-This work was developed by researchers from the [Human Media Interaction (HMI) group](https://www.utwente.nl/en/eemcs/hmi/) and the [Semantics, Cybersecurity & Services (SCS) Group at the University of Twente, The Netherlands](https://www.utwente.nl/en/eemcs/scs/).
+This work was developed by researchers from the [Human Media Interaction (HMI) group](https://www.utwente.nl/en/eemcs/hmi/) and the [Semantics, Cybersecurity & Services (SCS) group](https://www.utwente.nl/en/eemcs/scs/) at the University of Twente, The Netherlands.
 
 
 - [Delaram Javdani Rikhtehgar](https://orcid.org/0009-0007-8266-8395) [[GitHub](https://github.com/DelJavdani)] [[LinkedIn](https://www.linkedin.com/in/delaram-javdani-660941186/)]
