@@ -1,0 +1,404 @@
+@prefix : <http://onbehavr.com#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://onbehavr.com> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:PropositionalAttitude rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Propositional Attitude"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: \n\nGuizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Person"@en;
+    rdfs:comment "A Person is an Physical Agent. This means that our definition of person does not include fictional people."@en.
+:VirtualObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Object"@en;
+    rdfs:comment "According to Brey (2014), \"A virtual object is a digital object that is represented graphically as an object or region in a two- or three dimensional space and that can be interacted with or used through a computer interface.\" (p.44).\n\nAnother definition is given by Skowron (2023): A Virtual Object is \"an object created by human consciousness (i.e. an intentional one), maintained and ideally conditioned in its existence by computational procedures that themselves have a theoretical basis in various types of algorithm and, underlying this, various models of computation that fall, each of them, under their respective ideas. In short, it is a computationally grounded, ideally pre-conditioned, intentional object.\"\n\nVirtual objects can represent other objects, including other virtual objects, although it is more common that virtual objects represent physical objects. However, virtual objects may not represent any \"exterior\" thing.\n\nSource:\n\nBrey, Philip. \"The physical and social reality of virtual worlds.\" The Oxford handbook of virtuality (2014): 42-54.\n\nSkowron, Bartłomiej, and Paweł Stacewicz. \"Between Fiction, Reality, and Ideality: Virtual Objects as Computationally Grounded Intentional Objects.\" Philosophy & Technology 36, no. 2 (2023): 34. https://doi.org/10.1007/s13347-023-00633-8"@en.
+:Agent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Agent"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: \n\nGuizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:GenericObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Generic Object"@en;
+    rdfs:comment "In the Unified Foundational Ontology, in particular its OWL implementation called gUFO, a Functional Complex is a complex Object whose parts (components) play different roles in its composition, including most ordinary objects. For example, a person could be considered a gufo:FunctionalComplex with the various organs (heart, brain, lungs, etc.) playing different roles. Generic Object here means just Functional Complex.\n\nSource:\n\nhttps://nemo-ufes.github.io/gufo/#objectsandparts"@en.
+:PhysicalObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Physical Object"@en;
+    rdfs:comment "Physical Objects are disjoint with Virtual Objects. They represent physical things like people, chairs, computers, etc. The exact definition of physical objects is not so important for our purposes, provided we can contrast them to virtual objects."@en.
+:VirtualAgent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Agent"@en;
+    rdfs:comment "A Virtual Agent is an Agent that is also a Virtual Object."@en.
+:Avatar rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Avatar"@en;
+    rdfs:comment "In computing, an Avatar is a graphical representation of a user, the user's character, or persona. Avatars can be two-dimensional icons in Internet forums and other online communities, where they are also known as profile pictures, userpics, or formerly picons (personal icons, or possibly \"picture icons\"). Alternatively, an avatar can take the form of a three-dimensional model, as used in online worlds and video games, or an imaginary character with no graphical appearance, as in text-based games or worlds such as MUDs.\n\nSource:\n\nhttps://en.wikipedia.org/wiki/Avatar_(computing)"@en.
+:VirtualRealityInterface rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Reality Interface"@en;
+    rdfs:comment "Virtual Reality Interface is the technological means that provides access to a virtual reality environment. So, a Virtual Reality Connection must be related to a Virtual Reality Interface. For example, a virtual reality environment created by Unity."@en.
+:VirtualRealityConnection rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Virtual Reality Connection"@en;
+    rdfs:comment "A Virtual Reality Connection aggregates intrinsic properties (dispositions) by mediating certain objects, namely, a Virtual Reality Interface, Input Devices, a Virtual Reality User, and an Avatar. The manifestation of those properties are User Experience events. For example, a person logging into a Unity environment to play an Avatar in a virtual art exhibition establishes a Virtual Reality Connection."@en.
+:InputDevice rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Input Device"@en;
+    rdfs:comment "An Input Device is any device that provides data to a virtual reality system, including heart rate, object coordinates, eye-gaze measurements, etc."@en.
+:ImmersiveInputDevice rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Immersive Input Device"@en;
+    rdfs:comment "An Immersive Input Device generates a three-dimensional image which appears to surround the user. The presence of this type of device is essential to characterize a virtual reality experience."@en.
+:VirtualRealityUser rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Virtual Reality User"@en;
+    rdfs:comment "A Virtual Reality User is a Person who participates in a User Experience and is related to a Virtual Reality Connection."@en.
+:UserExperience rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "User Experience"@en;
+    rdfs:comment "A User Experience is a complex event composed of Physical User Behaviors and Virtual Events.\n\nUser Experiences are manifestations of the dispositions (capabilities, intrinsic properties) of a Virtual Reality Connection."@en.
+:MentalState rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Mental State"@en;
+    rdfs:comment "Mental states are mental properties held by people in general and Virtual Reality Users in particular. They include distraction, boredom, confusion, interest, attention, curiosity, sadness, and many others. In the context of user behavior research, we can infer some of the users' mental states based on their physical and virtual behaviors. This is why User Experiences are events manifesting mental states."@en.
+:VirtualActor rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Virtual Actor"@en;
+    rdfs:comment "A Virtual Actor is a Virtual Agent defined by the fact that it has participated in Virtual Event (Virtual Action)."@en.
+:PhysicalUserBehavior rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Physical User Behavior"@en;
+    rdfs:comment "A Physical User Behavior is an event manifesting a Virtual Reality User's dispositions, including physical movements and hear beats."@en.
+:VirtualEvent rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Virtual Event"@en;
+    rdfs:comment "Virtual Events are manifestations of Virtual Objects' dispositions (capabilities, intrinsic properties). They are what happens within a virtual reality environment."@en.
+:VirtualAction rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Virtual Action"@en;
+    rdfs:comment "A Virtual Action is an event performed by a Virtual Agent in virtue of their Propositional Attitudes (intentions, beliefs, desires)."@en.
+:Measurement rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Measurement"@en;
+    rdfs:comment "A Measurement is the generalization of Geospatial Measurement. It can be seen as the record produced by a Measurement Event."@en.
+:MeasurementEvent rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Measurement Event"@en;
+    rdfs:comment "A Measurement Event creates a Measurement, which can be seen as a record."@en.
+:Geometry rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Geometry"@en;
+    rdfs:comment "A Geometry object represents points, curves, and surfaces in coordinate space. Every Geometry object is a GeoJSON object no matter where it occurs in a GeoJSON text. \n\n- The value of a Geometry object's \"type\" member MUST be one of the seven geometry types. \n\n- A GeoJSON Geometry object of any type other than \"GeometryCollection\" has a member with the name \"coordinates\". The value of the \"coordinates\" member is an array. The structure of the elements in this array is determined by the type of geometry. GeoJSON processors MAY interpret Geometry objects with empty \"coordinates\" arrays as null objects. \n\n\nA position is the fundamental geometry construct.  The \"coordinates\"member of a Geometry object is composed of either:\n\n   -  one position in the case of a Point geometry,\n\n   -  an array of positions in the case of a LineString or MultiPoint\n      geometry,\n\n   -  an array of LineString or linear ring\n      coordinates in the case of a Polygon or MultiLineString geometry,\n      or\n\n   -  an array of Polygon coordinates in the case of a MultiPolygon\n      geometry.\n\n   A position is an array of numbers.  There MUST be two or more\n   elements.  The first two elements are longitude and latitude, or\n   easting and northing, precisely in that order and using decimal\n   numbers.  Altitude or elevation MAY be included as an optional third\n   element.\n\n   Implementations SHOULD NOT extend positions beyond three elements\n   because the semantics of extra elements are unspecified and\n   ambiguous.  Historically, some implementations have used a fourth\n   element to carry a linear referencing measure (sometimes denoted as\n   \"M\") or a numerical timestamp, but in most situations a parser will\n   not be able to properly interpret these values.  The interpretation\n   and meaning of additional elements is beyond the scope of this\n   specification, and additional elements MAY be ignored by parsers.\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#section-3.1"@en.
+:GeospatialMeasurement rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Geospatial Measurement"@en;
+    rdfs:comment "Geospatial Measurement is a Measurement that is also a Geospatial Feature, meaning it has a Geometry."@en.
+:GeospatialFeature rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Endurant;
+    rdfs:label "Geospatial Feature"@en;
+    rdfs:comment "Geospatial Feature is anything that has a Geometry or can be described as such."@en.
+:Point rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Point"@en;
+    rdfs:comment "For type \"Point\", the \"coordinates\" member is a single position.\n\nPoint coordinates are in x, y order (easting, northing for projected coordinates, longitude, and latitude for geographic coordinates):\n\n{\n        \"type\": \"Point\",\n        \"coordinates\": [100.0, 0.0]\n}\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:LineString rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Line String"@en;
+    rdfs:comment "For type \"LineString\", the \"coordinates\" member is an array of two or more positions.\n\nCoordinates of LineString are an array of positions:\n\n{\n        \"type\": \"LineString\",\n        \"coordinates\": [\n                [100.0, 0.0],\n                [101.0, 1.0]\n        ]\n}\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:Polygon rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Polygon"@en;
+    rdfs:comment "\nTo specify a constraint specific to Polygons, it is useful to\n   introduce the concept of a linear ring:\n\n   o  A linear ring is a closed LineString with four or more positions.\n\n   o  The first and last positions are equivalent, and they MUST contain\n      identical values; their representation SHOULD also be identical.\n\n   o  A linear ring is the boundary of a surface or the boundary of a\n      hole in a surface.\n\n   o  A linear ring MUST follow the right-hand rule with respect to the\n      area it bounds, i.e., exterior rings are counterclockwise, and\n      holes are clockwise.   Though a linear ring is not explicitly represented as a GeoJSON\n   geometry type, it leads to a canonical formulation of the Polygon\n   geometry type definition as follows:\n\n   o  For type \"Polygon\", the \"coordinates\" member MUST be an array of\n      linear ring coordinate arrays.\n\n   o  For Polygons with more than one of these rings, the first MUST be\n      the exterior ring, and any others MUST be interior rings.  The\n      exterior ring bounds the surface, and the interior rings (if\n      present) bound holes within the surface.\n\n    \nCoordinates of a Polygon are an array of linear ring coordinate arrays.  The first element in the array\n   represents the exterior ring.  Any subsequent elements represent\n   interior rings (or holes).\n\n   No holes:\n\n     {\n         \"type\": \"Polygon\",\n         \"coordinates\": [\n             [\n                 [100.0, 0.0],\n                 [101.0, 0.0],\n                 [101.0, 1.0],\n                 [100.0, 1.0],\n                 [100.0, 0.0]\n             ]\n         ]\n     }\n\n   With holes:\n\n     {\n         \"type\": \"Polygon\",\n         \"coordinates\": [\n             [\n                 [100.0, 0.0],\n                 [101.0, 0.0],\n                 [101.0, 1.0],\n                 [100.0, 1.0],\n                 [100.0, 0.0]\n             ],\n             [\n                 [100.8, 0.8],\n                 [100.8, 0.2],\n                 [100.2, 0.2],\n                 [100.2, 0.8],\n                 [100.8, 0.8]\n             ]\n         ]\n     }\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:MultiPolygon rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Multi-Polygon"@en;
+    rdfs:comment "For type \"MultiPolygon\", the \"coordinates\" member is an array of Polygon coordinate arrays. \n\n\nCoordinates of a MultiPolygon are an array of Polygon coordinate\n   arrays:\n\n     {\n         \"type\": \"MultiPolygon\",\n         \"coordinates\": [\n             [\n                 [\n                     [102.0, 2.0],\n                     [103.0, 2.0],\n                     [103.0, 3.0],\n                     [102.0, 3.0],\n                     [102.0, 2.0]\n                 ]\n             ],\n             [\n                 [\n                     [100.0, 0.0],\n                     [101.0, 0.0],\n                     [101.0, 1.0],\n                     [100.0, 1.0],\n                     [100.0, 0.0]\n                 ],\n                 [\n                     [100.2, 0.2],\n                     [100.2, 0.8],\n                     [100.8, 0.8],\n                     [100.8, 0.2],\n                     [100.2, 0.2]\n                 ]\n             ]\n         ]\n     }\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:MultiLineString rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Multi-Line String"@en;
+    rdfs:comment "For type \"MultiLineString\", the \"coordinates\" member is an array of LineString coordinate arrays. \n\n\nCoordinates of a MultiLineString are an array of LineString\n   coordinate arrays:\n\n     {\n         \"type\": \"MultiLineString\",\n         \"coordinates\": [\n             [\n                 [100.0, 0.0],\n                 [101.0, 1.0]\n             ],\n             [\n                 [102.0, 2.0],\n                 [103.0, 3.0]\n             ]\n         ]\n     }\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:MultiPoint rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Multi-Point"@en;
+    rdfs:comment "For type \"MultiPoint\", the \"coordinates\" member is an array of positions.\n\nCoordinates of a MultiPoint are an array of positions:\n\n{\n        \"type\": \"MultiPoint\",\n        \"coordinates\": [\n                [100.0, 0.0],\n                [101.0, 1.0]\n        ]\n}\n\nSource:\n\nhttps://datatracker.ietf.org/doc/html/rfc7946#appendix-A"@en.
+:VirtualGuide rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Virtual Guide"@en;
+    rdfs:comment "A non-player character (NPC) that is a Virtual Agent that interacts with an Avatar (standing for a Virtual Reality User)."@en.
+:VirtualArtPiece rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Art Piece"@en;
+    rdfs:comment "A Virtual Art Piece is an artwork that is also a Virtual Object. It often represents a physical artpiece, like a painting."@en.
+:VirtualRoom rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Room"@en;
+    rdfs:comment "A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. A Virtual Room a Virtual Object that represents a room in this sense.\n\nSource:\n\nhttp://en.wikipedia.org/wiki/Room"@en.
+:PlayerPosition rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Player Position"@en;
+    rdfs:comment "Player Position in a virtual reality environment is defined by 3D coordinates of the x, y, z. These are described by Points."@en.
+:ObjectGaze rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Object Gaze"@en;
+    rdfs:comment "Object Gaze is defined by 2D virtual object coordinates, considering the virtual object between [0,0] top left and [1,1] bottom right. This can also be described by Points of the form (x, y, 0)."@en.
+:EyeGazeFixation rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Eye-Gaze Fixation"@en;
+    rdfs:comment "Eye-Gaze Fixation concerns gaze position described by 3D coordinates. It has a duration in milliseconds defined by the difference between timestamps."@en.
+:AreaOfInterest rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Area of Interest"@en;
+    rdfs:comment "Area of Interest are specific regions in the paintings or other Virtual Object, such as people or landmarks, that are likely to attract the user's attention. it is a Geospatial Feature because it has a Geometry."@en.
+:BehaviorMeasurement rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Behavior Measurement"@en;
+    rdfs:comment "A Behavior Measurement is a measurement based on one or more Geospatial Measurements."@en.
+:VisitedAreaOfInterest rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Visited Area of Interest"@en;
+    rdfs:comment "The count of Area of Interests attended in a painting."@en.
+:FixationCount rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Fixation Count"@en;
+    rdfs:comment "The number of fixation points found in a painting."@en.
+:DwellTime rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Dwell Time"@en;
+    rdfs:comment "Total fixation duration of all fixations within an Area of Interest."@en.
+:DistanceToObject rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Distance to Object"@en;
+    rdfs:comment "Distance between a player (Avatar) and a painting or other Virtual Object."@en.
+:AreaOfInterestRevisit rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Area of Interest Revisit"@en;
+    rdfs:comment "The number of times returning to an Area of Interest."@en.
+:Transition rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Transition"@en;
+    rdfs:comment "The frequency of eye movement transitions between Area of Interests in a painting."@en.
+:Count rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Quality;
+    rdfs:label "Count"@en.
+:Agent rdfs:subClassOf :GenericObject.
+:PhysicalObject rdfs:subClassOf :GenericObject.
+:VirtualObject rdfs:subClassOf :GenericObject.
+:Person rdfs:subClassOf :Agent, :PhysicalObject.
+:VirtualAgent rdfs:subClassOf :VirtualObject, :Agent.
+:ImmersiveInputDevice rdfs:subClassOf :InputDevice.
+:Avatar rdfs:subClassOf :VirtualAgent.
+:VirtualRealityUser rdfs:subClassOf :Person.
+:VirtualAction rdfs:subClassOf :VirtualEvent.
+:VirtualActor rdfs:subClassOf :VirtualAgent.
+:GeospatialMeasurement rdfs:subClassOf :Measurement.
+:Point rdfs:subClassOf :Geometry.
+:LineString rdfs:subClassOf :Geometry.
+:Polygon rdfs:subClassOf :Geometry.
+:MultiPoint rdfs:subClassOf :Geometry.
+:MultiLineString rdfs:subClassOf :Geometry.
+:MultiPolygon rdfs:subClassOf :Geometry.
+:VirtualGuide rdfs:subClassOf :VirtualAgent.
+:VirtualArtPiece rdfs:subClassOf :VirtualObject.
+:VirtualRoom rdfs:subClassOf :VirtualObject.
+:PlayerPosition rdfs:subClassOf :GeospatialMeasurement.
+:ObjectGaze rdfs:subClassOf :GeospatialMeasurement.
+:EyeGazeFixation rdfs:subClassOf :GeospatialMeasurement.
+:GeospatialMeasurement rdfs:subClassOf :GeospatialFeature.
+:AreaOfInterest rdfs:subClassOf :GeospatialFeature.
+:VisitedAreaOfInterest rdfs:subClassOf :BehaviorMeasurement.
+:Transition rdfs:subClassOf :BehaviorMeasurement.
+:FixationCount rdfs:subClassOf :BehaviorMeasurement.
+:DwellTime rdfs:subClassOf :BehaviorMeasurement.
+:AreaOfInterestRevisit rdfs:subClassOf :BehaviorMeasurement.
+:DistanceToObject rdfs:subClassOf :BehaviorMeasurement.
+:BehaviorMeasurement rdfs:subClassOf :Measurement.
+[ rdf:type owl:AllDisjointClasses ] owl:members (:VirtualObject :PhysicalObject).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:MultiLineString :Point :MultiPoint :Polygon :LineString :MultiPolygon).
+:Geometry owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:MultiLineString :Point :MultiPoint :Polygon :LineString :MultiPolygon)
+].
+[ rdf:type owl:AllDisjointClasses ] owl:members (:PlayerPosition :ObjectGaze :EyeGazeFixation).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:VisitedAreaOfInterest :Transition :AreaOfInterestRevisit :DwellTime :FixationCount :DistanceToObject).
+:name rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "name"@en.
+:gender rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "gender"@en.
+:age rdfs:domain :Person;
+    rdfs:range xsd:int;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "age"@en.
+:nationality rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "nationality"@en.
+:nativeLanguage rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "native language"@en.
+:coordinate rdfs:domain :Geometry;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "coordinate"@en.
+:obtainedIn rdfs:domain :GeospatialMeasurement;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "obtained in"@en.
+:description rdfs:domain :VirtualArtPiece;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "description"@en.
+:duration rdfs:domain :EyeGazeFixation;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "duration"@en.
+:standsFor rdf:type owl:ObjectProperty;
+    rdfs:domain :Avatar;
+    rdfs:range :VirtualRealityUser;
+    rdfs:label "stands for"@en.
+:represents rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualObject;
+    rdfs:range :GenericObject;
+    rdfs:label "represents"@en.
+:userExperienceHasPhysicalUserBehavior rdf:type owl:ObjectProperty;
+    rdfs:domain :UserExperience;
+    rdfs:range :PhysicalUserBehavior.
+:userExperienceHasVirtualEvent rdf:type owl:ObjectProperty;
+    rdfs:domain :UserExperience;
+    rdfs:range :VirtualEvent.
+:refersTo rdf:type owl:ObjectProperty;
+    rdfs:domain :Measurement;
+    rdfs:range :UserExperience;
+    rdfs:label "refers to"@en.
+:Agent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :PropositionalAttitude
+].
+:PropositionalAttitude rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Agent
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityInterface
+].
+:VirtualRealityUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityUser
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :InputDevice
+].
+:UserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :VirtualRealityUser
+].
+:VirtualRealityUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :UserExperience
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :MentalState
+].
+:MentalState rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityUser
+].
+:VirtualAction rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :VirtualActor
+].
+:VirtualActor rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:participatedIn;
+  owl:someValuesFrom :VirtualAction
+].
+:UserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:manifestedIn ];
+  owl:someValuesFrom :MentalState
+].
+:VirtualEvent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :VirtualObject
+].
+:Measurement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :GenericObject
+].
+:MeasurementEvent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:wasCreatedIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Measurement
+].
+:Measurement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:wasCreatedIn;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :MeasurementEvent
+].
+:MeasurementEvent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:participatedIn ];
+  owl:someValuesFrom :InputDevice
+].
+:GeospatialFeature rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :Geometry
+].
+:Geometry rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :GeospatialFeature
+].
+:UserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:manifestedIn ];
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityConnection
+].
+:Avatar rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Avatar
+].
+:GeospatialMeasurement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :VirtualObject
+].
+:BehaviorMeasurement rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :GeospatialMeasurement
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :AreaOfInterest
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :Count
+].
+:Count rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :BehaviorMeasurement
+].
