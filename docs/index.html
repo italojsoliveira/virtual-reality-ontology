@@ -1,0 +1,1980 @@
+
+<!DOCTYPE html>
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>OnBehaVR: An Ontology model for user Behavior in a Virtual Reality</title>
+    
+    <style>
+      :root {
+        /* === COLORS === */
+        --backgroundColor: #ffffff;
+        --borderColor: #dddddd;
+        --titleColor: #005a9c;
+        --textColor: #212121;
+        --linkColor: #005a9c;
+        
+        /* === SHAPE === */
+        --borderRadius: 5px;
+        
+        /* === TYPOGRAPHY === */
+        --fontFamily: -apple-system, BlinkMacSystemFont, sans-serif;
+        --fontSize: 10px;
+        --mobileFontSize: 8px;
+        
+        /* === OVERRIDES === */
+    
+        --body_fontSize: 1.6rem;
+        --body_lineHeight: 2.4rem;
+        --body_padding: 3.2rem;
+        
+        --h1_fontSize: 3.6rem;
+        --h1_margin: 3rem 0 4rem 0;
+        
+        --h2_borderTop: 1px solid var(--borderColor);
+        --h2_fontSize: 3.2rem;
+        --h2_margin: 7rem 0 3rem;
+        --h2_padding: 1em 0 0 0;
+        
+        --h3_fontSize: 2.4rem;
+        --h3_margin: 5rem 0 1rem;
+        
+        --h4_fontSize: 2rem;
+        --h4_margin: 3rem 0 1rem;
+        
+        --h5_fontSize: 1.6rem;
+        --h5_margin: 2rem 0 1rem;
+        
+        --p_fontSize: 1.6rem;
+        --p_margin: 0 0 1rem;
+        
+        --a_fontSize: 1.6rem;
+        
+      }
+    
+      html {
+        font-size: var(--fontSize);
+        overflow-x: hidden;
+      }
+    
+      body {
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+        font-family: var(--fontFamily);
+        font-size: var(--bodyFontSize);
+        line-height: var(--bodyLineHeight);
+        margin: var(--bodyMargin);
+        padding: var(--bodyPadding);
+        overflow-x: hidden;
+      }
+    
+      h1, h2, h3, h4, h5, p, a {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        padding-block-start: 0;
+        padding-block-end: 0;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+      }
+    
+      h1, h2, h3, h4, h5 {
+        color: var(--titleColor);
+      }
+    
+      a {
+        color: var(--linkColor);
+      }
+    
+      body {
+        font-size: var(--body_fontSize);
+        line-height: var(--body_lineHeight);
+        padding: var(--body_padding);
+      }
+    
+      h1 {
+        font-size: var(--h1_fontSize);
+        margin: var(--h1_margin);
+      }
+    
+      h2 {
+        border-top: var(--h2_borderTop);
+        font-size: var(--h2_fontSize);
+        margin: var(--h2_margin);
+        padding: var(--h2_padding);
+      }
+    
+      h3 {
+        font-size: var(--h3_fontSize);
+        margin: var(--h3_margin);
+      }
+    
+      h4 {
+        font-size: var(--h4_fontSize);
+        margin: var(--h4_margin);
+      }
+    
+      h5 {
+        font-size: var(--h5_fontSize);
+        margin: var(--h5_margin);
+      }
+    
+      p {
+        font-size: var(--p_fontSize);
+        margin: var(--p_margin);
+      }
+    
+      a {
+        font-size: var(--a_fontSize);
+      }
+    
+    
+      @media screen and (max-width: 768px) {
+        html {
+          font-size: var(--mobileFontSize);
+        }
+    
+        body {
+          padding: 1.6rem;
+        }
+      }
+    
+      /* === TERMS INDEX === */
+    
+      .terms-index {
+        border-radius: var(--borderRadius);
+        border: 1px solid var(--borderColor);
+        padding: 2rem;
+        overflow-x: auto;
+      }
+    
+      .responsive-table {
+        overflow-x: auto;
+      }
+      
+    </style>
+  </head>
+  
+  <body>
+    <h1>OnBehaVR: An Ontology model for user Behavior in a Virtual Reality</h1>
+      <p>OnBehaVR is a core ontology that aims to characterize user behavior in a virtual reality environment by leveraging the Unified Foundational Ontology (UFO) and OntoUML modelling language. OnBehaVR intends to structure domain information so that data from different sources can be explained, represented, and integrated.</p>
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#general_information">General Information</a></li>
+      <li><a href="#terms_index">Alphabetical Index of Terms</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#relations">Object Properties</a></li>
+      <li><a href="#attributes">Datatype Properties</a></li>
+    </ol>
+    <h2 id="general_information">1. General Information</h2>
+    
+    <div class="general-information">
+      <h3>Namespace</h3>
+      <p>
+        <a href="http://onbehavr.com#">http://onbehavr.com#</a>
+      </p>
+      <h3>Prefixes</h3>
+      <table class="prefix-table">
+        <tbody>
+          <tr>
+            <th></th>
+            <td><a href="http://onbehavr.com#" target="_blank">http://onbehavr.com#</a></td>
+          </tr>
+          <tr>
+            <th>gufo</th>
+            <td><a href="http://purl.org/nemo/gufo#" target="_blank">http://purl.org/nemo/gufo#</a></td>
+          </tr>
+          <tr>
+            <th>rdf</th>
+            <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#" target="_blank">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+          </tr>
+          <tr>
+            <th>rdfs</th>
+            <td><a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></td>
+          </tr>
+          <tr>
+            <th>owl</th>
+            <td><a href="http://www.w3.org/2002/07/owl#" target="_blank">http://www.w3.org/2002/07/owl#</a></td>
+          </tr>
+          <tr>
+            <th>xsd</th>
+            <td><a href="http://www.w3.org/2001/XMLSchema#" target="_blank">http://www.w3.org/2001/XMLSchema#</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="terms_index">2. Alphabetical Index of Terms</h2>
+    
+    <div class="terms-index">
+      <p>
+        <b>Classes:</b> | <a href="#AbstractDevice">AbstractDevice</a> | <a href="#Agent">Agent</a> | <a href="#Avatar">Avatar</a> | <a href="#Belief">Belief</a> | <a href="#DerivedVRUserRecord">DerivedVRUserRecord</a> | <a href="#Desire">Desire</a> | <a href="#Device">Device</a> | <a href="#GenericEvent">GenericEvent</a> | <a href="#GenericObject">GenericObject</a> | <a href="#ImmersiveDevice">ImmersiveDevice</a> | <a href="#Intention">Intention</a> | <a href="#IntentionalMoment">IntentionalMoment</a> | <a href="#MentalState">MentalState</a> | <a href="#Person">Person</a> | <a href="#PhysicalEvent">PhysicalEvent</a> | <a href="#PhysicalObject">PhysicalObject</a> | <a href="#RecordFeature">RecordFeature</a> | <a href="#VRUserExperience">VRUserExperience</a> | <a href="#VRUserRecord">VRUserRecord</a> | <a href="#VirtualAction">VirtualAction</a> | <a href="#VirtualActor">VirtualActor</a> | <a href="#VirtualAgent">VirtualAgent</a> | <a href="#VirtualDisposition">VirtualDisposition</a> | <a href="#VirtualEvent">VirtualEvent</a> | <a href="#VirtualObject">VirtualObject</a> | <a href="#VirtualRealityConnection">VirtualRealityConnection</a> | <a href="#VirtualRealityProgram">VirtualRealityProgram</a> | <a href="#VirtualRealityUser">VirtualRealityUser</a>
+      </p>
+      <p>
+        <b>Object Properties:</b> | <a href="#calculatedFrom">calculatedFrom</a> | <a href="#concerns">concerns</a> | <a href="#experienced">experienced</a> | <a href="#expressedAs">expressedAs</a> | <a href="#generatedBy">generatedBy</a> | <a href="#hasFeature">hasFeature</a> | <a href="#intentionalMomentInheresInAgent">intentionalMomentInheresInAgent</a> | <a href="#mentalStateInheresInPerson">mentalStateInheresInPerson</a> | <a href="#performed">performed</a> | <a href="#recordedBy">recordedBy</a> | <a href="#refersTo">refersTo</a> | <a href="#standsFor">standsFor</a> | <a href="#virtualDispositionInheresInVirtualObject">virtualDispositionInheresInVirtualObject</a> | <a href="#virtualDispositionManifestedInVirtualEvent">virtualDispositionManifestedInVirtualEvent</a> | <a href="#virtualObjectParticipatedInVirtualEvent">virtualObjectParticipatedInVirtualEvent</a> | <a href="#virtualRealityConnectionManifestedInVrUserExperience">virtualRealityConnectionManifestedInVrUserExperience</a> | <a href="#virtualRealityConnectionMediatesAvatar">virtualRealityConnectionMediatesAvatar</a> | <a href="#virtualRealityConnectionMediatesDevice">virtualRealityConnectionMediatesDevice</a> | <a href="#virtualRealityConnectionMediatesVirtualObject">virtualRealityConnectionMediatesVirtualObject</a> | <a href="#virtualRealityConnectionMediatesVirtualRealityProgram">virtualRealityConnectionMediatesVirtualRealityProgram</a> | <a href="#virtualRealityConnectionMediatesVirtualRealityUser">virtualRealityConnectionMediatesVirtualRealityUser</a> | <a href="#vrUserExperienceHasPhysicalEvent">vrUserExperienceHasPhysicalEvent</a> | <a href="#vrUserExperienceHasVirtualEvent">vrUserExperienceHasVirtualEvent</a>
+      </p>
+      <p>
+        <b>Dataatype Properties:</b> | <a href="#age">age</a> | <a href="#gender">gender</a> | <a href="#name">name</a> | <a href="#nationality">nationality</a> | <a href="#nativeLanguage">nativeLanguage</a>
+      </p>
+    </div>
+    <h2 id="classes">3. Classes</h2>
+    
+    <div class="classes">
+        <h3 id="AbstractDevice">AbstractDevice</h3>
+        <p>Abstract Devices are implemented algorithms or procedures that generate Derived VR User Record.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Abstract Device&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#AbstractDevice">http://onbehavr.com#AbstractDevice</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#Device" target="_self">:Device</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#generatedBy" target="_self">:generatedBy</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Agent">Agent</h3>
+        <p>In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of &quot;intending something&quot;, but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, &quot;intending something&quot; is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.
+    
+    Source: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. &quot;Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.&quot; In CIbSE, pp. 127-140. 2008.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Agent&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Agent">http://onbehavr.com#Agent</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank">gufo:FunctionalComplex</a> <a href="#GenericObject" target="_self">:GenericObject</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a> <a href="#VirtualAgent" target="_self">:VirtualAgent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#intentionalMomentInheresInAgent" target="_self">:intentionalMomentInheresInAgent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Avatar">Avatar</h3>
+        <p>In computing, an Avatar is a graphical representation of a user, the user&#x27;s character, or persona. Avatars can be two-dimensional icons in Internet forums and other online communities, where they are also known as profile pictures, userpics, or formerly picons (personal icons, or possibly &quot;picture icons&quot;). Alternatively, an avatar can take the form of a three-dimensional model, as used in online worlds and video games, or an imaginary character with no graphical appearance, as in text-based games or worlds such as MUDs.
+    
+    Source: https://en.wikipedia.org/wiki/Avatar_(computing)&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Avatar&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Avatar">http://onbehavr.com#Avatar</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#VirtualAgent" target="_self">:VirtualAgent</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#standsFor" target="_self">:standsFor</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#virtualRealityConnectionMediatesAvatar" target="_self">:virtualRealityConnectionMediatesAvatar</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Belief">Belief</h3>
+        <p>In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of &quot;intending something&quot;, but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, &quot;intending something&quot; is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.
+    
+    Source: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. &quot;Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.&quot; In CIbSE, pp. 127-140. 2008.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Belief&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Belief">http://onbehavr.com#Belief</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#IntentionalMoment" target="_self">:IntentionalMoment</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="DerivedVRUserRecord">DerivedVRUserRecord</h3>
+        <p>Derived VR User Record is a VR User Record calculated from certain Record Feature values. For example, eye-gaze fixation duration is derived from eye-gaze coordinates and time.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Derived VR User Record&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#DerivedVRUserRecord">http://onbehavr.com#DerivedVRUserRecord</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#VRUserRecord" target="_self">:VRUserRecord</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#generatedBy" target="_self">:generatedBy</a> <a href="#calculatedFrom" target="_self">:calculatedFrom</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Desire">Desire</h3>
+        <p>In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of &quot;intending something&quot;, but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, &quot;intending something&quot; is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.
+    
+    Source: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. &quot;Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.&quot; In CIbSE, pp. 127-140. 2008.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Desire&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Desire">http://onbehavr.com#Desire</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#IntentionalMoment" target="_self">:IntentionalMoment</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Device">Device</h3>
+        <p>A Device is any device that provides data to a virtual reality system, including heart rate, object coordinates, eye-gaze measurements, etc.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Device&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Device">http://onbehavr.com#Device</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank">gufo:FunctionalComplex</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#ImmersiveDevice" target="_self">:ImmersiveDevice</a> <a href="#AbstractDevice" target="_self">:AbstractDevice</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#virtualRealityConnectionMediatesDevice" target="_self">:virtualRealityConnectionMediatesDevice</a> <a href="#recordedBy" target="_self">:recordedBy</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="GenericEvent">GenericEvent</h3>
+        <p>Generic Event is just an abstract class to generalize Physical Event and Virtual Event. It is intended to be the same as gufo:Event.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Generic Event&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#GenericEvent">http://onbehavr.com#GenericEvent</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#EventType" target="_blank">gufo:EventType</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Event" target="_blank">gufo:Event</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#PhysicalEvent" target="_self">:PhysicalEvent</a> <a href="#VirtualEvent" target="_self">:VirtualEvent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="GenericObject">GenericObject</h3>
+        <p>Objects are further classified according to the way they are structured into parts, leading to the following subclasses: gufo:FunctionalComplex, gufo:Collection and gufo:Quantity.
+    
+    A gufo:FunctionalComplex is a complex gufo:Object whose parts (components) play different roles in its composition, including most ordinary objects. For example, a person could be considered a gufo:FunctionalComplex with the various organs (heart, brain, lungs, etc.) playing different roles.
+    
+    A gufo:Collection is a complex gufo:Object whose parts (the members of the collection) have a uniform structure (i.e., members are conceived as playing the same role in the collection). Examples include a deck of cards, a pile of bricks, a forest (conceived as a collection of trees), a group of people. Collections may have a variable or fixed membership (see subclasses gufo:VariableCollection and gufo:FixedCollection).
+    
+    A gufo:Quantity is complex gufo:Object that is a maximally-connected portion of stuff. A gufo:Quantity has a fixed constitution, and thus, removing or adding a sub-quantity would result in a different quantity. Examples include the portion of wine in a wine tank, a lump of clay, the gold that constitutes a wedding ring.
+    
+    https://nemo-ufes.github.io/gufo/#objectsandparts&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Generic Object&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#GenericObject">http://onbehavr.com#GenericObject</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Object" target="_blank">gufo:Object</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#VirtualObject" target="_self">:VirtualObject</a> <a href="#PhysicalObject" target="_self">:PhysicalObject</a> <a href="#Agent" target="_self">:Agent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="ImmersiveDevice">ImmersiveDevice</h3>
+        <p>An Immersive Device generates a three-dimensional image which appears to surround the user. The presence of this type of device is essential to characterize a virtual reality experience. VR headsets are examples of such devices.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Immersive Device&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#ImmersiveDevice">http://onbehavr.com#ImmersiveDevice</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#Device" target="_self">:Device</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Intention">Intention</h3>
+        <p>In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of &quot;intending something&quot;, but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, &quot;intending something&quot; is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.
+    
+    Source: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. &quot;Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.&quot; In CIbSE, pp. 127-140. 2008.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Intention&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Intention">http://onbehavr.com#Intention</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#IntentionalMoment" target="_self">:IntentionalMoment</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="IntentionalMoment">IntentionalMoment</h3>
+        <p>In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of &quot;intending something&quot;, but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, &quot;intending something&quot; is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.
+    
+    Source: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. &quot;Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.&quot; In CIbSE, pp. 127-140. 2008.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Intentional Moment&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#IntentionalMoment">http://onbehavr.com#IntentionalMoment</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank">gufo:IntrinsicMode</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#Intention" target="_self">:Intention</a> <a href="#Belief" target="_self">:Belief</a> <a href="#Desire" target="_self">:Desire</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#intentionalMomentInheresInAgent" target="_self">:intentionalMomentInheresInAgent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="MentalState">MentalState</h3>
+        <p>Mental states are mental properties held by people in general and Virtual Reality Users in particular. They include distraction, boredom, confusion, interest, attention, curiosity, sadness, and many others. In the context of user behavior research, we can infer some of the users&#x27; mental states based on their physical and virtual behaviors. This is why User Experiences are events manifesting mental states.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Mental State&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#MentalState">http://onbehavr.com#MentalState</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank">gufo:IntrinsicMode</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#mentalStateInheresInPerson" target="_self">:mentalStateInheresInPerson</a> <a href="#expressedAs" target="_self">:expressedAs</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="Person">Person</h3>
+        <p>A Person is an Physical Agent. This means that our definition of person does not include fictional people.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Person&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#Person">http://onbehavr.com#Person</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#PhysicalObject" target="_self">:PhysicalObject</a> <a href="#Agent" target="_self">:Agent</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#VirtualRealityUser" target="_self">:VirtualRealityUser</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#name" target="_self">:name</a> <a href="#gender" target="_self">:gender</a> <a href="#age" target="_self">:age</a> <a href="#nationality" target="_self">:nationality</a> <a href="#nativeLanguage" target="_self">:nativeLanguage</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#mentalStateInheresInPerson" target="_self">:mentalStateInheresInPerson</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="PhysicalEvent">PhysicalEvent</h3>
+        <p>Physical Events include a Person&#x27;s physical movements and heartbeats. They are disjoint with Virtual Events and compose the VR User Experience.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Physical Event&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#PhysicalEvent">http://onbehavr.com#PhysicalEvent</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#EventType" target="_blank">gufo:EventType</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#GenericEvent" target="_self">:GenericEvent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#vrUserExperienceHasPhysicalEvent" target="_self">:vrUserExperienceHasPhysicalEvent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="PhysicalObject">PhysicalObject</h3>
+        <p>Physical Objects are disjoint with Virtual Objects. They represent physical things like people, chairs, computers, etc. The exact definition of physical objects is not so important for our purposes, provided we can contrast them to virtual objects.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Physical Object&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#PhysicalObject">http://onbehavr.com#PhysicalObject</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank">gufo:FunctionalComplex</a> <a href="#GenericObject" target="_self">:GenericObject</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="RecordFeature">RecordFeature</h3>
+        <p>Record Feature denotes any Quality of interest about the VR User Record. For example, the geometry of Area of Interest whose values are coordinates. Record Feature can also be understood and represented as attributes of VR User Records.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Record Feature&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#RecordFeature">http://onbehavr.com#RecordFeature</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank">gufo:IntrinsicMode</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#hasFeature" target="_self">:hasFeature</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#calculatedFrom" target="_self">:calculatedFrom</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VRUserExperience">VRUserExperience</h3>
+        <p>A VR User Experience is a complex event composed of Physical Events and Virtual Events. VR User Experiences are manifestations of the dispositions (capabilities, intrinsic properties) aggregated in a Virtual Reality Connection.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>VR User Experience&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VRUserExperience">http://onbehavr.com#VRUserExperience</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#EventType" target="_blank">gufo:EventType</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Event" target="_blank">gufo:Event</a> <a href="" target=""></a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#vrUserExperienceHasPhysicalEvent" target="_self">:vrUserExperienceHasPhysicalEvent</a> <a href="#vrUserExperienceHasVirtualEvent" target="_self">:vrUserExperienceHasVirtualEvent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#experienced" target="_self">:experienced</a> <a href="#expressedAs" target="_self">:expressedAs</a> <a href="#virtualRealityConnectionManifestedInVrUserExperience" target="_self">:virtualRealityConnectionManifestedInVrUserExperience</a> <a href="#refersTo" target="_self">:refersTo</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VRUserRecord">VRUserRecord</h3>
+        <p>VR User Record refers to any type of record concerning a Virtual Reality User, including eye-gaze data, heartbeat rate, dialogs, etc.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>VR User Record&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VRUserRecord">http://onbehavr.com#VRUserRecord</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Relator" target="_blank">gufo:Relator</a> <a href="" target=""></a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#DerivedVRUserRecord" target="_self">:DerivedVRUserRecord</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#recordedBy" target="_self">:recordedBy</a> <a href="#concerns" target="_self">:concerns</a> <a href="#refersTo" target="_self">:refersTo</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#hasFeature" target="_self">:hasFeature</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualAction">VirtualAction</h3>
+        <p>A Virtual Action is an event performed by a Virtual Agent in virtue of their Intentional Moments (intentions, beliefs, desires).&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Action&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualAction">http://onbehavr.com#VirtualAction</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#EventType" target="_blank">gufo:EventType</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#VirtualEvent" target="_self">:VirtualEvent</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#performed" target="_self">:performed</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualActor">VirtualActor</h3>
+        <p>A Virtual Actor is a Virtual Agent defined by the very fact that it participated in a Virtual Event (Virtual Action).&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Actor&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualActor">http://onbehavr.com#VirtualActor</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Role" target="_blank">gufo:Role</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#VirtualAgent" target="_self">:VirtualAgent</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#performed" target="_self">:performed</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualAgent">VirtualAgent</h3>
+        <p>A Virtual Agent is an Agent that is also a Virtual Object. Examples include Avatar (a virtual representation of the Virtual Reality User) and non-player characters (NPC). A virtual guide in a virtual exhibition may be considered a Virtual Agent, but a painting cannot be a Virtual Agent because it does not have Intentional Moments (intentions, beliefs, and desires).&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Agent&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualAgent">http://onbehavr.com#VirtualAgent</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#VirtualObject" target="_self">:VirtualObject</a> <a href="#Agent" target="_self">:Agent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#VirtualActor" target="_self">:VirtualActor</a> <a href="#Avatar" target="_self">:Avatar</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualDisposition">VirtualDisposition</h3>
+        <p>Virtual Dispositions are Dispositions (intrinsic properties) of Virtual Objects that are manifested by Virtual Events. Virtual Dispositions define what a Virtual Object can do in a virtual reality environment. For example, a virtual door may have the Virtual Disposition to open when triggered by a Virtual Agent&#x27;s actions. Virtual Dispositions also define the possible behavior of an Avatar.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Disposition&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualDisposition">http://onbehavr.com#VirtualDisposition</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank">gufo:IntrinsicMode</a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#virtualDispositionInheresInVirtualObject" target="_self">:virtualDispositionInheresInVirtualObject</a> <a href="#virtualDispositionManifestedInVirtualEvent" target="_self">:virtualDispositionManifestedInVirtualEvent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualEvent">VirtualEvent</h3>
+        <p>Virtual Events are manifestations of Virtual Objects&#x27; dispositions (capabilities, intrinsic properties). They are what happens within a virtual reality environment. They are disjoint with Virtual Events.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Event&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualEvent">http://onbehavr.com#VirtualEvent</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#EventType" target="_blank">gufo:EventType</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#GenericEvent" target="_self">:GenericEvent</a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#VirtualAction" target="_self">:VirtualAction</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#virtualDispositionManifestedInVirtualEvent" target="_self">:virtualDispositionManifestedInVirtualEvent</a> <a href="#vrUserExperienceHasVirtualEvent" target="_self">:vrUserExperienceHasVirtualEvent</a> <a href="#virtualObjectParticipatedInVirtualEvent" target="_self">:virtualObjectParticipatedInVirtualEvent</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualObject">VirtualObject</h3>
+        <p>According to Brey (2014), &quot;A virtual object is a digital object that is represented graphically as an object or region in a two- or three dimensional space and that can be interacted with or used through a computer interface.&quot; (p.44).
+    
+    Another definition is given by Skowron (2023): A Virtual Object is &quot;an object created by human consciousness (i.e. an intentional one), maintained and ideally conditioned in its existence by computational procedures that themselves have a theoretical basis in various types of algorithm and, underlying this, various models of computation that fall, each of them, under their respective ideas. In short, it is a computationally grounded, ideally pre-conditioned, intentional object.&quot;
+    
+    Virtual objects can represent other objects, including other virtual objects, although it is more common that virtual objects represent physical objects. However, virtual objects may not represent any &quot;exterior&quot; thing.
+    
+    Source:
+    
+    Brey, Philip. &quot;The physical and social reality of virtual worlds.&quot; The Oxford handbook of virtuality (2014): 42-54.
+    
+    Skowron, Bartłomiej, and Paweł Stacewicz. &quot;Between Fiction, Reality, and Ideality: Virtual Objects as Computationally Grounded Intentional Objects.&quot; Philosophy &amp; Technology 36, no. 2 (2023): 34. https://doi.org/10.1007/s13347-023-00633-8&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Object&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualObject">http://onbehavr.com#VirtualObject</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Category" target="_blank">gufo:Category</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank">gufo:FunctionalComplex</a> <a href="#GenericObject" target="_self">:GenericObject</a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>subtypes:</th>
+                <td>
+                  <a href="#VirtualAgent" target="_self">:VirtualAgent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#virtualObjectParticipatedInVirtualEvent" target="_self">:virtualObjectParticipatedInVirtualEvent</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#virtualDispositionInheresInVirtualObject" target="_self">:virtualDispositionInheresInVirtualObject</a> <a href="#virtualRealityConnectionMediatesVirtualObject" target="_self">:virtualRealityConnectionMediatesVirtualObject</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualRealityConnection">VirtualRealityConnection</h3>
+        <p>A Virtual Reality Connection aggregates intrinsic properties by mediating certain objects, namely, a Virtual Reality Program, Devices, a Virtual Reality User, Virtual Objects, and an Avatar. The manifestation of those properties are VR User Experience events. For example, a person logging into a Unity environment to play an Avatar in a virtual art exhibition establishes a Virtual Reality Connection.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Reality Connection&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualRealityConnection">http://onbehavr.com#VirtualRealityConnection</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Relator" target="_blank">gufo:Relator</a> <a href="" target=""></a> <a href="" target=""></a> <a href="" target=""></a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#virtualRealityConnectionMediatesVirtualRealityUser" target="_self">:virtualRealityConnectionMediatesVirtualRealityUser</a> <a href="#virtualRealityConnectionMediatesVirtualRealityProgram" target="_self">:virtualRealityConnectionMediatesVirtualRealityProgram</a> <a href="#virtualRealityConnectionMediatesAvatar" target="_self">:virtualRealityConnectionMediatesAvatar</a> <a href="#virtualRealityConnectionMediatesDevice" target="_self">:virtualRealityConnectionMediatesDevice</a> <a href="#virtualRealityConnectionManifestedInVrUserExperience" target="_self">:virtualRealityConnectionManifestedInVrUserExperience</a> <a href="#virtualRealityConnectionMediatesVirtualObject" target="_self">:virtualRealityConnectionMediatesVirtualObject</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualRealityProgram">VirtualRealityProgram</h3>
+        <p>Virtual Reality Program is the technological means that provides access to a virtual reality environment. So, a Virtual Reality Connection must be related to a Virtual Reality Program. For example, a virtual reality environment (say, a virtual museum) created by Unity.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Reality Program&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualRealityProgram">http://onbehavr.com#VirtualRealityProgram</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Kind" target="_blank">gufo:Kind</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank">gufo:FunctionalComplex</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#virtualRealityConnectionMediatesVirtualRealityProgram" target="_self">:virtualRealityConnectionMediatesVirtualRealityProgram</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="VirtualRealityUser">VirtualRealityUser</h3>
+        <p>A Virtual Reality User is a Person who participated in a VR User Experience and is related to a Virtual Reality Connection. This is why a Virtual Reality User is a historical role.&quot;@e</p>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>Virtual Reality User&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#VirtualRealityUser">http://onbehavr.com#VirtualRealityUser</a></td>
+              </tr>
+              <tr>
+                <th>stereotype:</th>
+                <td>
+                  <a href="http://purl.org/nemo/gufo#Role" target="_blank">gufo:Role</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>supertypes:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a> <a href="" target=""></a> <a href="" target=""></a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in domain of:</th>
+                <td>
+                  <a href="#experienced" target="_self">:experienced</a> 
+                </td>
+              </tr>
+              <tr>
+                <th>in range of:</th>
+                <td>
+                  <a href="#standsFor" target="_self">:standsFor</a> <a href="#virtualRealityConnectionMediatesVirtualRealityUser" target="_self">:virtualRealityConnectionMediatesVirtualRealityUser</a> <a href="#concerns" target="_self">:concerns</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <h2 id="relations">4. Object Properties</h2>
+    
+    <div class="relations">
+        <h3 id="calculatedFrom">calculatedFrom</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>calculatedFrom&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#calculatedFrom">http://onbehavr.com#calculatedFrom</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#DerivedVRUserRecord" target="_self">:DerivedVRUserRecord</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#RecordFeature" target="_self">:RecordFeature</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="concerns">concerns</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>concerns&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#concerns">http://onbehavr.com#concerns</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VRUserRecord" target="_self">:VRUserRecord</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualRealityUser" target="_self">:VirtualRealityUser</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="experienced">experienced</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>experienced&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#experienced">http://onbehavr.com#experienced</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityUser" target="_self">:VirtualRealityUser</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="expressedAs">expressedAs</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>expressedAs&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#expressedAs">http://onbehavr.com#expressedAs</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#MentalState" target="_self">:MentalState</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="generatedBy">generatedBy</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>generatedBy&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#generatedBy">http://onbehavr.com#generatedBy</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#DerivedVRUserRecord" target="_self">:DerivedVRUserRecord</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#AbstractDevice" target="_self">:AbstractDevice</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="hasFeature">hasFeature</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>hasFeature&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#hasFeature">http://onbehavr.com#hasFeature</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#RecordFeature" target="_self">:RecordFeature</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VRUserRecord" target="_self">:VRUserRecord</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="intentionalMomentInheresInAgent">intentionalMomentInheresInAgent</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#intentionalMomentInheresInAgent">http://onbehavr.com#intentionalMomentInheresInAgent</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#IntentionalMoment" target="_self">:IntentionalMoment</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#Agent" target="_self">:Agent</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="mentalStateInheresInPerson">mentalStateInheresInPerson</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#mentalStateInheresInPerson">http://onbehavr.com#mentalStateInheresInPerson</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#MentalState" target="_self">:MentalState</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="performed">performed</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>performed&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#performed">http://onbehavr.com#performed</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualActor" target="_self">:VirtualActor</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualAction" target="_self">:VirtualAction</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="recordedBy">recordedBy</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>recordedBy&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#recordedBy">http://onbehavr.com#recordedBy</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VRUserRecord" target="_self">:VRUserRecord</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#Device" target="_self">:Device</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="refersTo">refersTo</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>refersTo&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#refersTo">http://onbehavr.com#refersTo</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VRUserRecord" target="_self">:VRUserRecord</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="standsFor">standsFor</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>standsFor&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#standsFor">http://onbehavr.com#standsFor</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Avatar" target="_self">:Avatar</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualRealityUser" target="_self">:VirtualRealityUser</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualDispositionInheresInVirtualObject">virtualDispositionInheresInVirtualObject</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualDispositionInheresInVirtualObject">http://onbehavr.com#virtualDispositionInheresInVirtualObject</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualDisposition" target="_self">:VirtualDisposition</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualObject" target="_self">:VirtualObject</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualDispositionManifestedInVirtualEvent">virtualDispositionManifestedInVirtualEvent</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualDispositionManifestedInVirtualEvent">http://onbehavr.com#virtualDispositionManifestedInVirtualEvent</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualDisposition" target="_self">:VirtualDisposition</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualEvent" target="_self">:VirtualEvent</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualObjectParticipatedInVirtualEvent">virtualObjectParticipatedInVirtualEvent</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualObjectParticipatedInVirtualEvent">http://onbehavr.com#virtualObjectParticipatedInVirtualEvent</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualObject" target="_self">:VirtualObject</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualEvent" target="_self">:VirtualEvent</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionManifestedInVrUserExperience">virtualRealityConnectionManifestedInVrUserExperience</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionManifestedInVrUserExperience">http://onbehavr.com#virtualRealityConnectionManifestedInVrUserExperience</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionMediatesAvatar">virtualRealityConnectionMediatesAvatar</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionMediatesAvatar">http://onbehavr.com#virtualRealityConnectionMediatesAvatar</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#Avatar" target="_self">:Avatar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionMediatesDevice">virtualRealityConnectionMediatesDevice</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionMediatesDevice">http://onbehavr.com#virtualRealityConnectionMediatesDevice</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#Device" target="_self">:Device</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionMediatesVirtualObject">virtualRealityConnectionMediatesVirtualObject</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionMediatesVirtualObject">http://onbehavr.com#virtualRealityConnectionMediatesVirtualObject</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualObject" target="_self">:VirtualObject</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionMediatesVirtualRealityProgram">virtualRealityConnectionMediatesVirtualRealityProgram</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionMediatesVirtualRealityProgram">http://onbehavr.com#virtualRealityConnectionMediatesVirtualRealityProgram</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualRealityProgram" target="_self">:VirtualRealityProgram</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="virtualRealityConnectionMediatesVirtualRealityUser">virtualRealityConnectionMediatesVirtualRealityUser</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#virtualRealityConnectionMediatesVirtualRealityUser">http://onbehavr.com#virtualRealityConnectionMediatesVirtualRealityUser</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VirtualRealityConnection" target="_self">:VirtualRealityConnection</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualRealityUser" target="_self">:VirtualRealityUser</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="vrUserExperienceHasPhysicalEvent">vrUserExperienceHasPhysicalEvent</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#vrUserExperienceHasPhysicalEvent">http://onbehavr.com#vrUserExperienceHasPhysicalEvent</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#PhysicalEvent" target="_self">:PhysicalEvent</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="vrUserExperienceHasVirtualEvent">vrUserExperienceHasVirtualEvent</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#vrUserExperienceHasVirtualEvent">http://onbehavr.com#vrUserExperienceHasVirtualEvent</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#VRUserExperience" target="_self">:VRUserExperience</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="#VirtualEvent" target="_self">:VirtualEvent</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <h2 id="attributes">5. Datatype Properties</h2>
+    
+    <div class="attributes">
+        <h3 id="age">age</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>age&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#age">http://onbehavr.com#age</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="http://www.w3.org/2001/XMLSchema#int" target="_blank">xsd:int</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="gender">gender</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>gender&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#gender">http://onbehavr.com#gender</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank">xsd:string</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="name">name</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>name&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#name">http://onbehavr.com#name</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank">xsd:string</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="nationality">nationality</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>nationality&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#nationality">http://onbehavr.com#nationality</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank">xsd:string</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="nativeLanguage">nativeLanguage</h3>
+        <div class="responsive-table">
+          <table>
+            <tbody>
+              <tr>
+                <th>label:</th>
+                <td>nativeLanguage&quot;@e</td>
+              </tr>
+              <tr>
+                <th>identifier:</th>
+                <td><a href="http://onbehavr.com#nativeLanguage">http://onbehavr.com#nativeLanguage</a></td>
+              </tr>
+              <tr>
+                <th>domain:</th>
+                <td>
+                  <a href="#Person" target="_self">:Person</a>
+                </td>
+              </tr>
+              <tr>
+                <th>range:</th>
+                <td>
+                  <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank">xsd:string</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+@prefix : <http://onbehavr.com#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://onbehavr.com> rdf:type owl:Ontology;
+    owl:imports gufo:.
+:VirtualAction rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Virtual Action"@en;
+    rdfs:comment "A Virtual Action is an event performed by a Virtual Agent in virtue of their Intentional Moments (intentions, beliefs, desires)."@en.
+:VirtualRealityProgram rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Reality Program"@en;
+    rdfs:comment "Virtual Reality Program is the technological means that provides access to a virtual reality environment. So, a Virtual Reality Connection must be related to a Virtual Reality Program. For example, a virtual reality environment (say, a virtual museum) created by Unity."@en.
+:VirtualRealityConnection rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Virtual Reality Connection"@en;
+    rdfs:comment "A Virtual Reality Connection aggregates intrinsic properties by mediating certain objects, namely, a Virtual Reality Program, Devices, a Virtual Reality User, Virtual Objects, and an Avatar. The manifestation of those properties are VR User Experience events. For example, a person logging into a Unity environment to play an Avatar in a virtual art exhibition establishes a Virtual Reality Connection."@en.
+:Device rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Device"@en;
+    rdfs:comment "A Device is any device that provides data to a virtual reality system, including heart rate, object coordinates, eye-gaze measurements, etc."@en.
+:ImmersiveDevice rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Immersive Device"@en;
+    rdfs:comment "An Immersive Device generates a three-dimensional image which appears to surround the user. The presence of this type of device is essential to characterize a virtual reality experience. VR headsets are examples of such devices."@en.
+:VRUserExperience rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "VR User Experience"@en;
+    rdfs:comment "A VR User Experience is a complex event composed of Physical Events and Virtual Events. VR User Experiences are manifestations of the dispositions (capabilities, intrinsic properties) aggregated in a Virtual Reality Connection."@en.
+:MentalState rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Mental State"@en;
+    rdfs:comment "Mental states are mental properties held by people in general and Virtual Reality Users in particular. They include distraction, boredom, confusion, interest, attention, curiosity, sadness, and many others. In the context of user behavior research, we can infer some of the users' mental states based on their physical and virtual behaviors. This is why User Experiences are events manifesting mental states."@en.
+:PhysicalEvent rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Physical Event"@en;
+    rdfs:comment "Physical Events include a Person's physical movements and heartbeats. They are disjoint with Virtual Events and compose the VR User Experience."@en.
+:VirtualEvent rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:label "Virtual Event"@en;
+    rdfs:comment "Virtual Events are manifestations of Virtual Objects' dispositions (capabilities, intrinsic properties). They are what happens within a virtual reality environment. They are disjoint with Virtual Events."@en.
+:VirtualActor rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Virtual Actor"@en;
+    rdfs:comment "A Virtual Actor is a Virtual Agent defined by the very fact that it participated in a Virtual Event (Virtual Action)."@en.
+:Avatar rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Avatar"@en;
+    rdfs:comment "In computing, an Avatar is a graphical representation of a user, the user's character, or persona. Avatars can be two-dimensional icons in Internet forums and other online communities, where they are also known as profile pictures, userpics, or formerly picons (personal icons, or possibly \"picture icons\"). Alternatively, an avatar can take the form of a three-dimensional model, as used in online worlds and video games, or an imaginary character with no graphical appearance, as in text-based games or worlds such as MUDs.\n\nSource: https://en.wikipedia.org/wiki/Avatar_(computing)"@en.
+:VirtualRealityUser rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Virtual Reality User"@en;
+    rdfs:comment "A Virtual Reality User is a Person who participated in a VR User Experience and is related to a Virtual Reality Connection. This is why a Virtual Reality User is a historical role."@en.
+:Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Person"@en;
+    rdfs:comment "A Person is an Physical Agent. This means that our definition of person does not include fictional people."@en.
+:VirtualDisposition rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Virtual Disposition"@en;
+    rdfs:comment "Virtual Dispositions are Dispositions (intrinsic properties) of Virtual Objects that are manifested by Virtual Events. Virtual Dispositions define what a Virtual Object can do in a virtual reality environment. For example, a virtual door may have the Virtual Disposition to open when triggered by a Virtual Agent's actions. Virtual Dispositions also define the possible behavior of an Avatar."@en.
+:VirtualAgent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Virtual Agent"@en;
+    rdfs:comment "A Virtual Agent is an Agent that is also a Virtual Object. Examples include Avatar (a virtual representation of the Virtual Reality User) and non-player characters (NPC). A virtual guide in a virtual exhibition may be considered a Virtual Agent, but a painting cannot be a Virtual Agent because it does not have Intentional Moments (intentions, beliefs, and desires)."@en.
+:VirtualObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Virtual Object"@en;
+    rdfs:comment "According to Brey (2014), \"A virtual object is a digital object that is represented graphically as an object or region in a two- or three dimensional space and that can be interacted with or used through a computer interface.\" (p.44).\n\nAnother definition is given by Skowron (2023): A Virtual Object is \"an object created by human consciousness (i.e. an intentional one), maintained and ideally conditioned in its existence by computational procedures that themselves have a theoretical basis in various types of algorithm and, underlying this, various models of computation that fall, each of them, under their respective ideas. In short, it is a computationally grounded, ideally pre-conditioned, intentional object.\"\n\nVirtual objects can represent other objects, including other virtual objects, although it is more common that virtual objects represent physical objects. However, virtual objects may not represent any \"exterior\" thing.\n\nSource:\n\nBrey, Philip. \"The physical and social reality of virtual worlds.\" The Oxford handbook of virtuality (2014): 42-54.\n\nSkowron, Bartłomiej, and Paweł Stacewicz. \"Between Fiction, Reality, and Ideality: Virtual Objects as Computationally Grounded Intentional Objects.\" Philosophy & Technology 36, no. 2 (2023): 34. https://doi.org/10.1007/s13347-023-00633-8"@en.
+:PhysicalObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Physical Object"@en;
+    rdfs:comment "Physical Objects are disjoint with Virtual Objects. They represent physical things like people, chairs, computers, etc. The exact definition of physical objects is not so important for our purposes, provided we can contrast them to virtual objects."@en.
+:Agent rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
+    rdfs:label "Agent"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:GenericObject rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Object;
+    rdfs:label "Generic Object"@en;
+    rdfs:comment "Objects are further classified according to the way they are structured into parts, leading to the following subclasses: gufo:FunctionalComplex, gufo:Collection and gufo:Quantity.\n\nA gufo:FunctionalComplex is a complex gufo:Object whose parts (components) play different roles in its composition, including most ordinary objects. For example, a person could be considered a gufo:FunctionalComplex with the various organs (heart, brain, lungs, etc.) playing different roles.\n\nA gufo:Collection is a complex gufo:Object whose parts (the members of the collection) have a uniform structure (i.e., members are conceived as playing the same role in the collection). Examples include a deck of cards, a pile of bricks, a forest (conceived as a collection of trees), a group of people. Collections may have a variable or fixed membership (see subclasses gufo:VariableCollection and gufo:FixedCollection).\n\nA gufo:Quantity is complex gufo:Object that is a maximally-connected portion of stuff. A gufo:Quantity has a fixed constitution, and thus, removing or adding a sub-quantity would result in a different quantity. Examples include the portion of wine in a wine tank, a lump of clay, the gold that constitutes a wedding ring.\n\nhttps://nemo-ufes.github.io/gufo/#objectsandparts"@en.
+:IntentionalMoment rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Intentional Moment"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:Intention rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Intention"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:Belief rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Belief"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:Desire rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Desire"@en;
+    rdfs:comment "In the Unified Foundational Ontology, Agents are substantials that can bear special kinds of moments named Intentional Moments (or Propositional Attitudes). Agents can be people, organizations, companies, robots, or anything we can usefully ascribe propositional attitudes. Intentionality, in this sense, should be understood in a much broader context than the notion of \"intending something\", but as the capacity of some properties of certain individuals to refer to possible situations of reality. Every intentional moment has a type (e.g., Belief, Desire, Intention) and a propositional content. The latter being an abstract representation of a class of situations referred by that intentional moment. Thus, \"intending something\" is a specific type of intentionality termed Intention. The propositional content of an Intention is a Goal. The precise relation between an intentional moment and a situation is the following: situation in reality can satisfy the propositional content of an intentional moment (i.e., satisfy - in the logical sense - the proposition representing that propositional content). Beliefs can be justified by situations in reality. Examples include my belief that Rome is the Capital of Italy, and the Belief that the Moon orbits the Earth; Desires and Intentions can be fulfilled or frustrated. Whilst a desire expresses a will of an agent towards a state of affairs in reality (e.g., a Desire that Brazil wins the Next World Cup), intentions are desired state of affairs for which the agent commits at pursuing (internal commitment) (e.g., the Intention of going to a beach resort for the next summer break). For this reason, intentions cause the agent to perform Actions.\n\nSource: Guizzardi, Giancarlo, Ricardo de Almeida Falbo, and Renata SS Guizzardi. \"Grounding software domain ontologies in the unified foundational ontology (ufo): the case of the ode software process ontology.\" In CIbSE, pp. 127-140. 2008."@en.
+:GenericEvent rdf:type owl:Class, gufo:EventType, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Event;
+    rdfs:label "Generic Event"@en;
+    rdfs:comment "Generic Event is just an abstract class to generalize Physical Event and Virtual Event. It is intended to be the same as gufo:Event."@en.
+:AbstractDevice rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:label "Abstract Device"@en;
+    rdfs:comment "Abstract Devices are implemented algorithms or procedures that generate Derived VR User Record."@en.
+:VRUserRecord rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "VR User Record"@en;
+    rdfs:comment "VR User Record refers to any type of record concerning a Virtual Reality User, including eye-gaze data, heartbeat rate, dialogs, etc."@en.
+:DerivedVRUserRecord rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Derived VR User Record"@en;
+    rdfs:comment "Derived VR User Record is a VR User Record calculated from certain Record Feature values. For example, eye-gaze fixation duration is derived from eye-gaze coordinates and time."@en.
+:RecordFeature rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Record Feature"@en;
+    rdfs:comment "Record Feature denotes any Quality of interest about the VR User Record. For example, the geometry of Area of Interest whose values are coordinates. Record Feature can also be understood and represented as attributes of VR User Records."@en.
+:Agent rdfs:subClassOf :GenericObject.
+:PhysicalObject rdfs:subClassOf :GenericObject.
+:VirtualObject rdfs:subClassOf :GenericObject.
+:Person rdfs:subClassOf :Agent, :PhysicalObject.
+:VirtualAgent rdfs:subClassOf :VirtualObject.
+:VirtualRealityUser rdfs:subClassOf :Person.
+:Avatar rdfs:subClassOf :VirtualAgent.
+:VirtualActor rdfs:subClassOf :VirtualAgent.
+:VirtualAgent rdfs:subClassOf :Agent.
+:VirtualAction rdfs:subClassOf :VirtualEvent.
+:ImmersiveDevice rdfs:subClassOf :Device.
+:Intention rdfs:subClassOf :IntentionalMoment.
+:Belief rdfs:subClassOf :IntentionalMoment.
+:Desire rdfs:subClassOf :IntentionalMoment.
+:VirtualEvent rdfs:subClassOf :GenericEvent.
+:PhysicalEvent rdfs:subClassOf :GenericEvent.
+:AbstractDevice rdfs:subClassOf :Device.
+:DerivedVRUserRecord rdfs:subClassOf :VRUserRecord.
+[ rdf:type owl:AllDisjointClasses ] owl:members (:VirtualObject :PhysicalObject).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:Belief :Intention :Desire).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:PhysicalEvent :VirtualEvent).
+:name rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "name"@en.
+:gender rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "gender"@en.
+:age rdfs:domain :Person;
+    rdfs:range xsd:int;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "age"@en.
+:nationality rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "nationality"@en.
+:nativeLanguage rdfs:domain :Person;
+    rdfs:range xsd:string;
+    rdf:type owl:DatatypeProperty;
+    rdfs:subPropertyOf gufo:hasQualityValue;
+    rdfs:label "nativeLanguage"@en.
+:virtualDispositionInheresInVirtualObject rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualDisposition;
+    rdfs:range :VirtualObject;
+    rdfs:subPropertyOf gufo:inheresIn.
+:standsFor rdf:type owl:ObjectProperty;
+    rdfs:domain :Avatar;
+    rdfs:range :VirtualRealityUser;
+    rdfs:label "standsFor"@en.
+:experienced rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityUser;
+    rdfs:range :VRUserExperience;
+    rdfs:label "experienced"@en;
+    rdfs:subPropertyOf gufo:participatedIn.
+:virtualRealityConnectionMediatesVirtualRealityUser rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :VirtualRealityUser;
+    rdfs:subPropertyOf gufo:mediates.
+:virtualDispositionManifestedInVirtualEvent rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualDisposition;
+    rdfs:range :VirtualEvent;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:vrUserExperienceHasPhysicalEvent rdf:type owl:ObjectProperty;
+    rdfs:domain :VRUserExperience;
+    rdfs:range :PhysicalEvent.
+:vrUserExperienceHasVirtualEvent rdf:type owl:ObjectProperty;
+    rdfs:domain :VRUserExperience;
+    rdfs:range :VirtualEvent.
+:performed rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualActor;
+    rdfs:range :VirtualAction;
+    rdfs:label "performed"@en;
+    rdfs:subPropertyOf gufo:participatedIn.
+:virtualObjectParticipatedInVirtualEvent rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualObject;
+    rdfs:range :VirtualEvent;
+    rdfs:subPropertyOf gufo:participatedIn.
+:virtualRealityConnectionMediatesVirtualRealityProgram rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :VirtualRealityProgram;
+    rdfs:subPropertyOf gufo:mediates.
+:intentionalMomentInheresInAgent rdf:type owl:ObjectProperty;
+    rdfs:domain :IntentionalMoment;
+    rdfs:range :Agent;
+    rdfs:subPropertyOf gufo:inheresIn.
+:virtualRealityConnectionMediatesAvatar rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :Avatar;
+    rdfs:subPropertyOf gufo:mediates.
+:mentalStateInheresInPerson rdf:type owl:ObjectProperty;
+    rdfs:domain :MentalState;
+    rdfs:range :Person;
+    rdfs:subPropertyOf gufo:inheresIn.
+:expressedAs rdf:type owl:ObjectProperty;
+    rdfs:domain :MentalState;
+    rdfs:range :VRUserExperience;
+    rdfs:label "expressedAs"@en;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:virtualRealityConnectionMediatesDevice rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :Device;
+    rdfs:subPropertyOf gufo:mediates.
+:virtualRealityConnectionManifestedInVrUserExperience rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :VRUserExperience;
+    rdfs:subPropertyOf gufo:manifestedIn.
+:virtualRealityConnectionMediatesVirtualObject rdf:type owl:ObjectProperty;
+    rdfs:domain :VirtualRealityConnection;
+    rdfs:range :VirtualObject;
+    rdfs:subPropertyOf gufo:mediates.
+:recordedBy rdf:type owl:ObjectProperty;
+    rdfs:domain :VRUserRecord;
+    rdfs:range :Device;
+    rdfs:label "recordedBy"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:concerns rdf:type owl:ObjectProperty;
+    rdfs:domain :VRUserRecord;
+    rdfs:range :VirtualRealityUser;
+    rdfs:label "concerns"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:refersTo rdf:type owl:ObjectProperty;
+    rdfs:domain :VRUserRecord;
+    rdfs:range :VRUserExperience;
+    rdfs:label "refersTo"@en.
+:generatedBy rdf:type owl:ObjectProperty;
+    rdfs:domain :DerivedVRUserRecord;
+    rdfs:range :AbstractDevice;
+    rdfs:label "generatedBy"@en;
+    rdfs:subPropertyOf gufo:mediates.
+:hasFeature rdf:type owl:ObjectProperty;
+    rdfs:domain :RecordFeature;
+    rdfs:range :VRUserRecord;
+    rdfs:label "hasFeature"@en;
+    rdfs:subPropertyOf gufo:inheresIn.
+:calculatedFrom rdf:type owl:ObjectProperty;
+    rdfs:domain :DerivedVRUserRecord;
+    rdfs:range :RecordFeature;
+    rdfs:label "calculatedFrom"@en.
+:VirtualObject rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualDispositionInheresInVirtualObject ];
+  owl:someValuesFrom :VirtualDisposition
+].
+:VirtualDisposition rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualDispositionInheresInVirtualObject;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualObject
+].
+:VRUserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :experienced ];
+  owl:someValuesFrom :VirtualRealityUser
+].
+:VirtualRealityUser rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :experienced;
+  owl:someValuesFrom :VRUserExperience
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualRealityConnectionMediatesVirtualRealityUser ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualRealityConnectionMediatesVirtualRealityUser;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityUser
+].
+:VirtualEvent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualDispositionManifestedInVirtualEvent ];
+  owl:someValuesFrom :VirtualDisposition
+].
+:VirtualAction rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :performed ];
+  owl:someValuesFrom :VirtualActor
+].
+:VirtualActor rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :performed;
+  owl:someValuesFrom :VirtualAction
+].
+:VirtualEvent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualObjectParticipatedInVirtualEvent ];
+  owl:someValuesFrom :VirtualObject
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualRealityConnectionMediatesVirtualRealityProgram;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityProgram
+].
+:Agent rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :intentionalMomentInheresInAgent ];
+  owl:someValuesFrom :IntentionalMoment
+].
+:IntentionalMoment rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :intentionalMomentInheresInAgent;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Agent
+].
+:Avatar rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualRealityConnectionMediatesAvatar ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualRealityConnectionMediatesAvatar;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Avatar
+].
+:Person rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :mentalStateInheresInPerson ];
+  owl:someValuesFrom :MentalState
+].
+:MentalState rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :mentalStateInheresInPerson;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Person
+].
+:VRUserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :expressedAs ];
+  owl:someValuesFrom :MentalState
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualRealityConnectionMediatesDevice;
+  owl:someValuesFrom :Device
+].
+:VRUserExperience rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualRealityConnectionManifestedInVrUserExperience ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualObject rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :virtualRealityConnectionMediatesVirtualObject ];
+  owl:someValuesFrom :VirtualRealityConnection
+].
+:VirtualRealityConnection rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :virtualRealityConnectionMediatesVirtualObject;
+  owl:someValuesFrom :VirtualObject
+].
+:VRUserRecord rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :recordedBy;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Device
+], [
+  rdf:type owl:Restriction;
+  owl:onProperty :concerns;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VirtualRealityUser
+].
+:DerivedVRUserRecord rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :generatedBy;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :AbstractDevice
+].
+:VRUserRecord rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf :hasFeature ];
+  owl:someValuesFrom :RecordFeature
+].
+:RecordFeature rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty :hasFeature;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :VRUserRecord
+].
