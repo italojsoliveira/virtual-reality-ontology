@@ -15,4 +15,4 @@ This work was developed by researchers from the [Human Media Interaction (HMI) g
 
 - [Delaram Javdani Rikhtehgar](https://orcid.org/0009-0007-8266-8395) [[GitHub](https://github.com/DelJavdani)] [[LinkedIn](https://www.linkedin.com/in/delaram-javdani-660941186/)]
 - [Ítalo Oliveira](https://orcid.org/0000-0002-2384-3081) [[GitHub](https://github.com/italojsoliveira)] [[LinkedIn](https://www.linkedin.com/in/%C3%ADtalo-oliveira-800923162/)]
-- [Shenghui Wang](https://orcid.org/0000-0003-0583-6969) [[LinkedIn](https://www.linkedin.com/in/shenghuiwang/)]
+- [Shenghui Wang](https://orcid.org/0000-0003-0583-6969) [[GitHub](https://github.com/shenghuiwang2023)] [[LinkedIn](https://www.linkedin.com/in/shenghuiwang/)]
