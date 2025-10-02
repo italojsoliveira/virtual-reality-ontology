@@ -6,6 +6,8 @@
 
  [OnBehaVR](https://github.com/italojsoliveira/virtual-reality-ontology) is a core ontology that aims to characterize user behaviour in a virtual reality environment by leveraging the Unified Foundational Ontology (UFO) and OntoUML modelling language. OnBehaVR intends to structure domain information so that data from different sources can be explained, represented, and integrated.
 
+ - OWL Documentation: https://italojsoliveira.github.io/virtual-reality-ontology/.
+
 ## Authors
 
 This work was developed by researchers from the [Human Media Interaction (HMI) group](https://www.utwente.nl/en/eemcs/hmi/) and the [Semantics, Cybersecurity & Services (SCS) group](https://www.utwente.nl/en/eemcs/scs/) at the University of Twente, The Netherlands.
